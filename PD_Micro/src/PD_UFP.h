@@ -73,6 +73,7 @@ class PD_UFP_core_c
         // Get
         uint16_t get_voltage(void) { return ready_voltage; }    // Voltage in 50mV units, 20mV(PPS)
         uint16_t get_current(void) { return ready_current; }    // Current in 10mA units, 50mA(PPS)
+		bool get_power_info(PD_power_info_t *p, uint8_t index);
         // Set
         bool set_PPS(uint16_t PPS_voltage, uint8_t PPS_current);
         void set_power_option(enum PD_power_option_t power_option);

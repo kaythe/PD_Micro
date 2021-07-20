@@ -123,6 +123,11 @@ bool PD_UFP_core_c::set_PPS(uint16_t PPS_voltage, uint8_t PPS_current)
     return false;
 }
 
+bool PD_UFP_core_c::get_power_info(PD_power_info_t *p, uint8_t index)
+{
+	return PD_protocol_get_power_info(&protocol, index, p);
+}
+
 void PD_UFP_core_c::set_power_option(enum PD_power_option_t power_option)
 {
     if (PD_protocol_set_power_option(&protocol, power_option)) {
